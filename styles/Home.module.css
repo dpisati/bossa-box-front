@@ -200,7 +200,12 @@
     margin-bottom: 20px;
   }
   .addButtonMobile {
+    width: 120px;
+    height: 40px;
     right: 0;
     top: 20px;
+  }
+  .addLabel {
+    text-align: right;
   }
 }

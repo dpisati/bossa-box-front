@@ -261,3 +261,15 @@
 .span {
   color: #f95e5a;
 }
+
+@media only screen and (max-width: 640px) {
+  .modalBody {
+    width: 90vw;
+  }
+  .modalContent {
+    padding: 0;
+  }
+  .modalFooter {
+    margin-top: 30px;
+  }
+}
