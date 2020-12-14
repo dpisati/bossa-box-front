@@ -13,6 +13,8 @@ export default function Home() {
   const [searchInput, setSearchInput] = useState("");
   const [searchForTags, setSearchForTags] = useState(false);
 
+  const [isLoading, setIsLoading] = useState(false)
+
   const [toolSelected, setToolSelected] = useState({});
 
   const [addModal, setAddModal] = useState(false);
@@ -21,12 +23,15 @@ export default function Home() {
 
   async function fetchPosts() {
     // const res = await fetch("http://localhost:3000/tools");
+    setIsLoading(true)
     const res = await fetch("https://bossa-box-api.herokuapp.com/tools");
     const data = await res.json();
     setPosts(data);
+    // setIsLoading(false);
   }
 
   async function fetchFilteredPosts() {
+    setIsLoading(true)
     if (!searchForTags) {
       // const res = await fetch(`http://localhost:3000/tools?q=${searchInput}`);
       const res = await fetch(
@@ -34,6 +39,7 @@ export default function Home() {
       );
       const data = await res.json();
       setPosts(data);
+      setIsLoading(false)
     } else {
       const res = await fetch(
         // `http://localhost:3000/tools?tags_like=${searchInput}`
@@ -41,6 +47,7 @@ export default function Home() {
       );
       const data = await res.json();
       setPosts(data);
+      setIsLoading(false);
     }
   }
 
@@ -157,8 +164,8 @@ export default function Home() {
             <label className={styles.addLabel}>Add</label>
           </button>
         </div>
-
-        {!posts.length == 0 ? (
+        
+        { !isLoading && !posts.length == 0 && (
           posts.map((post) => {
             return (
               <Card
@@ -169,8 +176,24 @@ export default function Home() {
               />
             );
           })
-        ) : (
+        )}
+
+        { isLoading && (
           <div className={styles.noPosts}>
+            <div className={styles.spinner}>
+              <Image
+                src="/spinner.gif"
+                alt="Not Found"
+                width={100}
+                height={100}
+              />
+              <h2 className={styles.loading}>Loading...</h2>
+            </div>
+          </div>
+        )} 
+
+        { !isLoading && posts.length == 0 && (
+            <div className={styles.noPosts}>
             <div className={styles.noPostsImg}>
               <Image
                 src="/caveman.gif"
@@ -183,11 +206,11 @@ export default function Home() {
           </div>
         )}
 
-        {addToolModal && (
+        { addToolModal && (
           <Modal setAddModal={handleCloseModal} fetchPosts={fetchPosts} />
         )}
 
-        {toolSelected && confirmationModal && (
+        { toolSelected && confirmationModal && (
           <ConfirmationModal
             setAddModal={handleCloseModal}
             tool={toolSelected}

@@ -118,7 +118,6 @@
   justify-content: center;
   align-items: center;
   font-size: 2rem;
-  text-align: center;
 }
 
 .noPostsImg {
@@ -130,8 +129,20 @@
   align-items: center;
 }
 
+
 .notFound {
   margin-top: 50px;
   position: absolute;
   bottom: 0;
+}
+
+.spinner {
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.loading {
+  margin-top: 20px;
 }
