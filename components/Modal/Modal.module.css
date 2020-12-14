@@ -1,3 +1,54 @@
+.modal {
+  width: 100vw;
+  height: 100vh;
+  overflow-y: hidden;
+  background-color: #170c3ae6;
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modalBody {
+  width: 550px;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  box-shadow: 0px 20px 25px #0000001a;
+  border-radius: 5px;
+  padding: 30px;
+
+  animation-name: modal;
+  animation-duration: 0.4s;
+  animation-timing-function: ease;
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.confirmationModal {
+  margin-left: 0px;
+}
+
+.closeModal {
+  cursor: pointer;
+}
+
+.modalHeaderAdd {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modalTitle {
+  font-size: 16px;
+  margin-left: 20px;
+}
+
 .modalInput {
   padding: 10px 10px 10px 50px;
   margin-right: 20px;
@@ -20,10 +71,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 30px;
+  padding: 0 20px;
   margin-right: 22px;
-  width: 174px;
-  height: 50px;
+  width: 124px;
+  height: 40px;
   background: #365df0 0% 0% no-repeat padding-box;
   border-radius: 5px;
   transition: 0.2s;
@@ -42,56 +93,6 @@
   background: #244aa8 0% 0% no-repeat padding-box;
 }
 
-.modal {
-  width: 100vw;
-  height: 100vh;
-  overflow-y: hidden;
-  background-color: #170c3ae6;
-  position: absolute;
-  left: 0;
-  top: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.modalHeader {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 30px;
-}
-
-.modalHeaderAdd {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.modalTitle {
-  margin-left: 20px;
-}
-
-.confirmationModal {
-  margin-left: 0px;
-}
-
-.closeModal {
-  cursor: pointer;
-}
-
-.modalBody {
-  width: 600px;
-  background: #ffffff 0% 0% no-repeat padding-box;
-  box-shadow: 0px 20px 25px #0000001a;
-  border-radius: 5px;
-  padding: 30px;
-
-  animation-name: modal;
-  animation-duration: 0.4s;
-  animation-timing-function: ease;
-}
-
 @keyframes modal {
   0% {
     opacity: 0;
@@ -107,12 +108,12 @@
   }
 }
 .modalContent {
-  padding: 20px 50px;
+  padding: 0px 50px;
 }
 
 .modalLabel {
   display: block;
-  font: normal normal 600 20px/26px Source Sans Pro;
+  font: normal normal 600 16px/26px Source Sans Pro;
   letter-spacing: 0.4px;
   color: #170c3a;
   margin-bottom: 8px;
@@ -124,7 +125,7 @@
   padding: 10px 10px 10px 50px;
   margin-right: 20px;
   width: 403px;
-  height: 50px;
+  height: 40px;
   background: #f5f4f6 0% 0% no-repeat padding-box;
   border: 1px solid #ebeaed;
   border-radius: 5px;
@@ -149,13 +150,13 @@
 }
 
 .cancelButton {
-  width: 122px;
-  height: 50px;
+  width: 112px;
+  height: 40px;
   background: #e1e7fd 0% 0% no-repeat padding-box;
   border-radius: 5px;
   justify-content: center;
   color: #365df0;
-  font: normal normal 600 18px/24px Source Sans Pro;
+  font: normal normal 600 16px/24px Source Sans Pro;
 }
 
 .cancelButton:hover {
@@ -167,12 +168,12 @@
 }
 
 .saveButton {
-  width: 122px;
-  height: 50px;
+  width: 112px;
+  height: 40px;
   color: white;
   justify-content: center;
   margin-right: 0;
-  font: normal normal 600 18px/24px Source Sans Pro;
+  font: normal normal 600 16px/24px Source Sans Pro;
 }
 
 .modalInputTextArea {
@@ -185,8 +186,8 @@
 }
 
 .addTagField {
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   background-color: rgb(214, 214, 214);
   position: absolute;
   top: 5px;

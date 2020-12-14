@@ -95,8 +95,6 @@ export default function Modal({ setAddModal, fetchPosts }) {
             <div className={styles.modalHeaderAdd}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="61.414"
-                height="61.42"
                 viewBox="0 0 61.414 61.42"
                 style={{
                   fill: "none",
@@ -104,8 +102,8 @@ export default function Modal({ setAddModal, fetchPosts }) {
                   strokeMiterlimit: 10,
                   strokeWidth: "10px",
                   transform: "rotate(45deg)",
-                  width: "15px",
-                  height: "15px",
+                  width: "12px",
+                  height: "12px",
                 }}
               >
                 <defs></defs>
