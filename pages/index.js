@@ -26,8 +26,8 @@ export default function Home() {
     setIsLoading(true)
     const res = await fetch("https://bossa-box-api.herokuapp.com/tools");
     const data = await res.json();
-    setPosts(data);
-    // setIsLoading(false);
+    await setPosts(data);
+    await setIsLoading(false);
   }
 
   async function fetchFilteredPosts() {
