@@ -14,7 +14,6 @@
   color: #170c3a;
 }
 
-
 .addButton,
 .saveButton,
 .cancelButton {
@@ -82,14 +81,31 @@
 }
 
 .modalBody {
-  background-color: white;
   width: 600px;
   background: #ffffff 0% 0% no-repeat padding-box;
   box-shadow: 0px 20px 25px #0000001a;
   border-radius: 5px;
   padding: 30px;
+
+  animation-name: modal;
+  animation-duration: 0.4s;
+  animation-timing-function: ease;
 }
 
+@keyframes modal {
+  0% {
+    opacity: 0;
+    transform: translateY(-100vh);
+  }
+  80% {
+    opacity: 1;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
 .modalContent {
   padding: 20px 50px;
 }
@@ -98,7 +114,7 @@
   display: block;
   font: normal normal 600 20px/26px Source Sans Pro;
   letter-spacing: 0.4px;
-  color: #170C3A;
+  color: #170c3a;
   margin-bottom: 8px;
   margin-top: 20px;
 }
@@ -227,19 +243,19 @@
   background-color: #d3d3d3;
 }
 
-
-.modalInputError, .modalInputTextAreaError {
-  background: #FEEFEE 0% 0% no-repeat padding-box;
-  border: 1px solid #F95E5A;
+.modalInputError,
+.modalInputTextAreaError {
+  background: #feefee 0% 0% no-repeat padding-box;
+  border: 1px solid #f95e5a;
 }
 
 .modalErrorMessage {
   text-align: right;
   font: normal normal normal 15px/24px Source Sans Pro;
   letter-spacing: 0.36px;
-  color: #F95E5A;
+  color: #f95e5a;
 }
 
 .span {
-  color: #F95E5A;
+  color: #f95e5a;
 }
