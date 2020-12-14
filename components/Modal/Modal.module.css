@@ -1,0 +1,245 @@
+.modalInput {
+  padding: 10px 10px 10px 50px;
+  margin-right: 20px;
+  width: 403px;
+  height: 50px;
+  background: #f5f4f6 0% 0% no-repeat padding-box;
+  border: 1px solid #ebeaed;
+  border-radius: 5px;
+  opacity: 1;
+  transition: 0.1s;
+  text-align: left;
+  font: normal normal normal 20px/25px Source Sans Pro;
+  letter-spacing: 0px;
+  color: #170c3a;
+}
+
+
+.addButton,
+.saveButton,
+.cancelButton {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+  margin-right: 22px;
+  width: 174px;
+  height: 50px;
+  background: #365df0 0% 0% no-repeat padding-box;
+  border-radius: 5px;
+  transition: 0.2s;
+  cursor: pointer;
+  outline: none;
+  border: none;
+}
+
+.addButton:hover,
+.saveButton:hover {
+  background: #2f55cc 0% 0% no-repeat padding-box;
+}
+
+.addButton:active,
+.saveButton:active {
+  background: #244aa8 0% 0% no-repeat padding-box;
+}
+
+.modal {
+  width: 100vw;
+  height: 100vh;
+  overflow-y: hidden;
+  background-color: #170c3ae6;
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.modalHeaderAdd {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modalTitle {
+  margin-left: 20px;
+}
+
+.confirmationModal {
+  margin-left: 0px;
+}
+
+.closeModal {
+  cursor: pointer;
+}
+
+.modalBody {
+  background-color: white;
+  width: 600px;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  box-shadow: 0px 20px 25px #0000001a;
+  border-radius: 5px;
+  padding: 30px;
+}
+
+.modalContent {
+  padding: 20px 50px;
+}
+
+.modalLabel {
+  display: block;
+  font: normal normal 600 20px/26px Source Sans Pro;
+  letter-spacing: 0.4px;
+  color: #170C3A;
+  margin-bottom: 8px;
+  margin-top: 20px;
+}
+.searchInput,
+.modalInput,
+.modalInputTextArea {
+  padding: 10px 10px 10px 50px;
+  margin-right: 20px;
+  width: 403px;
+  height: 50px;
+  background: #f5f4f6 0% 0% no-repeat padding-box;
+  border: 1px solid #ebeaed;
+  border-radius: 5px;
+  opacity: 1;
+  transition: 0.1s;
+  text-align: left;
+  font: normal normal normal 20px/25px Source Sans Pro;
+  letter-spacing: 0px;
+  color: #170c3a;
+}
+
+.modalInput,
+.modalInputTextArea {
+  padding-left: 20px;
+  width: 100%;
+}
+.modalFooter {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.cancelButton {
+  width: 122px;
+  height: 50px;
+  background: #e1e7fd 0% 0% no-repeat padding-box;
+  border-radius: 5px;
+  justify-content: center;
+  color: #365df0;
+  font: normal normal 600 18px/24px Source Sans Pro;
+}
+
+.cancelButton:hover {
+  background: #cad6fc 0% 0% no-repeat padding-box;
+}
+
+.cancelButton:active {
+  background: #b9c6fa 0% 0% no-repeat padding-box;
+}
+
+.saveButton {
+  width: 122px;
+  height: 50px;
+  color: white;
+  justify-content: center;
+  margin-right: 0;
+  font: normal normal 600 18px/24px Source Sans Pro;
+}
+
+.modalInputTextArea {
+  resize: none;
+  min-height: 120px;
+}
+
+.addTags {
+  position: relative;
+}
+
+.addTagField {
+  width: 40px;
+  height: 40px;
+  background-color: rgb(214, 214, 214);
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+.addTagField:hover {
+  background-color: rgb(199, 199, 199);
+}
+.addTagField:active {
+  background-color: rgb(177, 177, 177);
+}
+
+.addTag {
+  fill: none;
+  stroke: #8f8a9b;
+  stroke-miterlimit: 10;
+  stroke-width: 10px;
+  transform: rotate(45deg);
+  width: 10px;
+  height: 10px;
+}
+
+.tagsContainer {
+  display: flex;
+  margin-top: 15px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.tag {
+  display: flex;
+  align-items: center;
+  height: 30px;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-bottom: 2px;
+  background-color: #e2e2e2;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.removeTag {
+  margin-left: 10px;
+}
+
+.tag:hover {
+  background-color: #d3d3d3;
+}
+
+
+.modalInputError, .modalInputTextAreaError {
+  background: #FEEFEE 0% 0% no-repeat padding-box;
+  border: 1px solid #F95E5A;
+}
+
+.modalErrorMessage {
+  text-align: right;
+  font: normal normal normal 15px/24px Source Sans Pro;
+  letter-spacing: 0.36px;
+  color: #F95E5A;
+}
+
+.span {
+  color: #F95E5A;
+}
