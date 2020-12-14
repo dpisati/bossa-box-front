@@ -1,50 +1,68 @@
-
 .card {
-    padding: 15px 20px;
-    margin-bottom: 20px;
-    
-  }
-  
-  .cardHeader {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
-  }
-  .tags {
-    display: flex;
-    list-style-type: none;
-  }
-  
-  .tags li {
-    font-weight: 900;
-    margin-top: 20px;
-    margin-right: 15px;
-  }
+  padding: 15px 20px;
+  margin-bottom: 20px;
+}
 
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+}
+
+.tags li {
+  font-weight: 900;
+  margin-top: 20px;
+  margin-right: 15px;
+}
+
+.removeButton {
+  background: #f95e5a 0% 0% no-repeat padding-box;
+  border-radius: 5px;
+  width: 174px;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 30px;
+  align-items: center;
+  text-align: center;
+  font: normal normal 600 18px/24px Source Sans Pro;
+  letter-spacing: 0.36px;
+  color: #ffffff;
+  transition: 0.2s;
+  cursor: pointer;
+  outline: none;
+  border: none;
+}
+
+.removeButton:hover {
+  background: #cc4c4c 0% 0% no-repeat padding-box;
+}
+
+.removeButton:active {
+  background: #a53f3f 0% 0% no-repeat padding-box;
+}
+
+.removeText {
+  color: white;
+}
+
+@media only screen and (max-width: 640px) {
   .removeButton {
-    background: #F95E5A 0% 0% no-repeat padding-box;
-    border-radius: 5px;
-    width: 174px;
-    height: 50px;
+    padding: 0;
+    margin: 0;
     display: flex;
-    justify-content: space-between;
-    padding: 0 30px;
+    justify-content: center;
     align-items: center;
-    text-align: center;
-    font: normal normal 600 18px/24px Source Sans Pro;
-    letter-spacing: 0.36px;
-    color: #FFFFFF;
-    transition: 0.2s;
-    cursor: pointer;
-    outline: none;
-    border: none;
+    width: 50px;
+    height: 50px;
   }
-
-  .removeButton:hover {
-    background: #CC4C4C 0% 0% no-repeat padding-box;
+  .removeText {
+    display: none;
   }
-
-  .removeButton:active {
-    background: #A53F3F 0% 0% no-repeat padding-box;
-  }
+}

@@ -9,7 +9,8 @@
 }
 
 .title {
-  margin: 50px 0px;
+  margin-top: 50px;
+  margin-bottom: 25px;
 }
 
 .header {
@@ -22,16 +23,20 @@
 
 .headerLeft {
   position: relative;
-  height: 20px;
   display: flex;
   align-items: center;
 }
 
+.searchInputContiner {
+  position: relative;
+}
+
 .searchIcon {
   position: absolute;
-  width: 20px;
-  height: 20px;
-  left: 15px;
+  top: 11px;
+  left: 14px;
+  width: 18px;
+  height: 18px;
 }
 
 .searchInput,
@@ -39,8 +44,8 @@
 .modalInputTextArea {
   padding: 10px 10px 10px 50px;
   margin-right: 20px;
-  width: 403px;
-  height: 50px;
+  max-width: 400px;
+  height: 40px;
   background: #f5f4f6 0% 0% no-repeat padding-box;
   border: 1px solid #ebeaed;
   border-radius: 5px;
@@ -76,6 +81,7 @@
 }
 .addButton,
 .saveButton,
+.addButtonMobile,
 .cancelButton {
   display: flex;
   justify-content: space-between;
@@ -90,6 +96,9 @@
   cursor: pointer;
   outline: none;
   border: none;
+}
+.addButtonMobile {
+  display: none;
 }
 
 .addButton:hover,
@@ -134,4 +143,63 @@
   margin-top: 50px;
   position: absolute;
   bottom: 0;
+}
+
+@media only screen and (max-width: 1200px) {
+  .main {
+    padding: 0 50px;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  .addButton {
+    display: none;
+  }
+  .addButtonMobile {
+    display: flex;
+    position: fixed;
+    top: 20px;
+    right: 50px;
+    -webkit-box-shadow: 0px 0px 14px -2px rgba(0, 0, 0, 0.65);
+    -moz-box-shadow: 0px 0px 14px -2px rgba(0, 0, 0, 0.65);
+    box-shadow: 0px 0px 14px -2px rgba(0, 0, 0, 0.65);
+  }
+}
+@media only screen and (max-width: 640px) {
+  .main {
+    padding: 0 20px;
+  }
+
+  .title {
+    margin-top: 18px;
+  }
+
+  .subtitle {
+    font-size: 1.2rem;
+  }
+  .header {
+    margin-top: 18px;
+    margin-bottom: 18px;
+  }
+
+  .headerLeft {
+    width: 100%;
+    position: relative;
+    display: block;
+  }
+
+  .searchInputContiner {
+    width: 100%;
+    position: relative;
+  }
+
+  .searchInput {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    margin-bottom: 20px;
+  }
+  .addButtonMobile {
+    right: 0;
+  }
 }

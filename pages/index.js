@@ -79,57 +79,87 @@ export default function Home() {
 
       <main className={`${styles.main} ${addModal && styles.modalIsOpen}`}>
         <h1 className={styles.title}>VUTTR</h1>
-        <h2>Very Useful Tools to Remember</h2>
+        <h2 className={styles.subtitle}>Very Useful Tools to Remember</h2>
 
         <div className={styles.header}>
           <div className={styles.headerLeft}>
-            <svg
-              className={styles.searchIcon}
-              xmlns="http://www.w3.org/2000/svg"
-              width="47.707"
-              height="47.707"
-              viewBox="0 0 47.707 47.707"
-              style={{
-                fill: "none",
-                stroke: "#170c3a",
-                strokeMiterlimit: 10,
-                strokeWidth: "2px",
-                width: "20px",
-                height: "20px",
-              }}
-            >
-              <defs></defs>
-              <g transform="translate(-1272 -1799)">
-                <path
-                  className="a"
-                  d="M39.049,39.049,56,56"
-                  transform="translate(1263 1790)"
-                />
-                <circle
-                  className="a"
-                  cx="17"
-                  cy="17"
-                  r="17"
-                  transform="translate(1273 1800)"
-                />
-              </g>
-            </svg>
-            <input
-              className={styles.searchInput}
-              type="text"
-              placeholder="search"
-              value={searchInput}
-              onChange={(e) => setSearchInput(e.target.value)}
-            ></input>
-            <input
-              type="checkbox"
-              value={searchForTags}
-              onChange={() => setSearchForTags(!searchForTags)}
-            />
-            <label className={styles.searchLabel}>search in tags only</label>
+            <div className={styles.searchInputContiner}>
+              <svg
+                className={styles.searchIcon}
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 47.707 47.707"
+                style={{
+                  fill: "none",
+                  stroke: "#170c3a",
+                  strokeMiterlimit: 10,
+                  strokeWidth: "3px",
+                  width: "18px",
+                  height: "18px",
+                }}
+              >
+                <defs></defs>
+                <g transform="translate(-1272 -1799)">
+                  <path
+                    className="a"
+                    d="M39.049,39.049,56,56"
+                    transform="translate(1263 1790)"
+                  />
+                  <circle
+                    className="a"
+                    cx="17"
+                    cy="17"
+                    r="17"
+                    transform="translate(1273 1800)"
+                  />
+                </g>
+              </svg>
+              <input
+                className={styles.searchInput}
+                type="text"
+                placeholder="search"
+                value={searchInput}
+                onChange={(e) => setSearchInput(e.target.value)}
+              ></input>
+            </div>
+            <div className={styles.searchInputTagContainer}>
+              <input
+                type="checkbox"
+                value={searchForTags}
+                onChange={() => setSearchForTags(!searchForTags)}
+              />
+              <label className={styles.searchLabel}>search in tags only</label>
+            </div>
           </div>
 
           <button className={styles.addButton} onClick={handleAddPost}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="61.414"
+              height="61.42"
+              viewBox="0 0 61.414 61.42"
+              style={{
+                fill: "none",
+                stroke: "#FFFFFF",
+                strokeMiterlimit: 10,
+                strokeWidth: "10px",
+                transform: "rotate(45deg)",
+                width: "15px",
+                height: "15px",
+              }}
+            >
+              <defs></defs>
+              <g transform="translate(-568.793 -714.793)">
+                <path
+                  className="a"
+                  d="M80,20.005l-60,60m60,0L20,20"
+                  transform="translate(549.501 695.5)"
+                />
+              </g>
+            </svg>
+            <label className={styles.addLabel}>Add</label>
+          </button>
+
+          <button className={styles.addButtonMobile} onClick={handleAddPost}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="61.414"
