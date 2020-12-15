@@ -13,6 +13,8 @@ export default function Home() {
   const [searchInput, setSearchInput] = useState("");
   const [searchForTags, setSearchForTags] = useState(false);
 
+  const [isLoading, setIsLoading] = useState(false);
+
   const [toolSelected, setToolSelected] = useState({});
 
   const [addModal, setAddModal] = useState(false);
@@ -21,9 +23,11 @@ export default function Home() {
 
   async function fetchPosts() {
     // const res = await fetch("http://localhost:3000/tools");
+    setIsLoading(true);
     const res = await fetch("https://bossa-box-api.herokuapp.com/tools");
     const data = await res.json();
     setPosts(data);
+    setIsLoading(false);
   }
 
   async function fetchFilteredPosts() {
@@ -188,7 +192,7 @@ export default function Home() {
           </button>
         </div>
 
-        {!posts.length == 0 ? (
+        {/* {!posts.length == 0 ? (
           posts.map((post) => {
             return (
               <Card
@@ -200,6 +204,46 @@ export default function Home() {
             );
           })
         ) : (
+          <div className={styles.noPosts}>
+            <div className={styles.noPostsImg}>
+              <Image
+                src="/caveman.gif"
+                alt="Not Found"
+                width={500}
+                height={400}
+              />
+              <h2 className={styles.notFound}>Ooops, no posts found...</h2>
+            </div>
+          </div>
+        )} */}
+
+        {!posts.length == 0 && !isLoading && (
+          posts.map((post) => {
+            return (
+              <Card
+                key={post.id}
+                content={post}
+                onDelete={fetchPosts}
+                setToolSelected={handleSelectPost}
+              />
+            );
+          })
+        )}
+
+        { isLoading && (
+          <div className={styles.noPosts}>
+            <div className={styles.spinner}>
+              <h2 className={styles.loading}>Loading...</h2>
+              <Image
+                src="/spinner.gif"
+                alt="Not Found"
+                width={150}
+                height={150}
+              />
+            </div>
+          </div>
+        )}
+        { posts.length == 0 && !isLoading && (
           <div className={styles.noPosts}>
             <div className={styles.noPostsImg}>
               <Image
