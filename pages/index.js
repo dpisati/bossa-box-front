@@ -82,86 +82,9 @@ export default function Home() {
       </Head>
 
       <main className={`${styles.main} ${addModal && styles.modalIsOpen}`}>
-        <h1 className={styles.title}>VUTTR</h1>
-        <h2 className={styles.subtitle}>Very Useful Tools to Remember</h2>
-
-        <div className={styles.header}>
-          <div className={styles.headerLeft}>
-            <div className={styles.searchInputContiner}>
-              <svg
-                className={styles.searchIcon}
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 47.707 47.707"
-                style={{
-                  fill: "none",
-                  stroke: "#170c3a",
-                  strokeMiterlimit: 10,
-                  strokeWidth: "3px",
-                  width: "18px",
-                  height: "18px",
-                }}
-              >
-                <defs></defs>
-                <g transform="translate(-1272 -1799)">
-                  <path
-                    className="a"
-                    d="M39.049,39.049,56,56"
-                    transform="translate(1263 1790)"
-                  />
-                  <circle
-                    className="a"
-                    cx="17"
-                    cy="17"
-                    r="17"
-                    transform="translate(1273 1800)"
-                  />
-                </g>
-              </svg>
-              <input
-                className={styles.searchInput}
-                type="text"
-                placeholder="search"
-                value={searchInput}
-                onChange={(e) => setSearchInput(e.target.value)}
-              ></input>
-            </div>
-            <div className={styles.searchInputTagContainer}>
-              <input
-                type="checkbox"
-                value={searchForTags}
-                onChange={() => setSearchForTags(!searchForTags)}
-              />
-              <label className={styles.searchLabel}>search in tags only</label>
-            </div>
-          </div>
-
-          <button className={styles.addButton} onClick={handleAddPost}>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="61.414"
-              height="61.42"
-              viewBox="0 0 61.414 61.42"
-              style={{
-                fill: "none",
-                stroke: "#FFFFFF",
-                strokeMiterlimit: 10,
-                strokeWidth: "10px",
-                transform: "rotate(45deg)",
-                width: "15px",
-                height: "15px",
-              }}
-            >
-              <defs></defs>
-              <g transform="translate(-568.793 -714.793)">
-                <path
-                  className="a"
-                  d="M80,20.005l-60,60m60,0L20,20"
-                  transform="translate(549.501 695.5)"
-                />
-              </g>
-            </svg>
-            <label className={styles.addLabel}>Add</label>
-          </button>
+        <div className={styles.topHeader}>
+          <h1 className={styles.title}>VUTTR</h1>
+          <h2 className={styles.subtitle}>Very Useful Tools to Remember</h2>
 
           <button className={styles.addButtonMobile} onClick={handleAddPost}>
             <svg
@@ -190,6 +113,87 @@ export default function Home() {
             </svg>
             <label className={styles.addLabel}>Add</label>
           </button>
+
+          <div className={styles.header}>
+            <div className={styles.headerLeft}>
+              <div className={styles.searchInputContiner}>
+                <svg
+                  className={styles.searchIcon}
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 47.707 47.707"
+                  style={{
+                    fill: "none",
+                    stroke: "#170c3a",
+                    strokeMiterlimit: 10,
+                    strokeWidth: "3px",
+                    width: "18px",
+                    height: "18px",
+                  }}
+                >
+                  <defs></defs>
+                  <g transform="translate(-1272 -1799)">
+                    <path
+                      className="a"
+                      d="M39.049,39.049,56,56"
+                      transform="translate(1263 1790)"
+                    />
+                    <circle
+                      className="a"
+                      cx="17"
+                      cy="17"
+                      r="17"
+                      transform="translate(1273 1800)"
+                    />
+                  </g>
+                </svg>
+                <input
+                  className={styles.searchInput}
+                  type="text"
+                  placeholder="search"
+                  value={searchInput}
+                  onChange={(e) => setSearchInput(e.target.value)}
+                ></input>
+              </div>
+              <div className={styles.searchInputTagContainer}>
+                <input
+                  type="checkbox"
+                  value={searchForTags}
+                  onChange={() => setSearchForTags(!searchForTags)}
+                />
+                <label className={styles.searchLabel}>
+                  search in tags only
+                </label>
+              </div>
+            </div>
+
+            <button className={styles.addButton} onClick={handleAddPost}>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="61.414"
+                height="61.42"
+                viewBox="0 0 61.414 61.42"
+                style={{
+                  fill: "none",
+                  stroke: "#FFFFFF",
+                  strokeMiterlimit: 10,
+                  strokeWidth: "10px",
+                  transform: "rotate(45deg)",
+                  width: "15px",
+                  height: "15px",
+                }}
+              >
+                <defs></defs>
+                <g transform="translate(-568.793 -714.793)">
+                  <path
+                    className="a"
+                    d="M80,20.005l-60,60m60,0L20,20"
+                    transform="translate(549.501 695.5)"
+                  />
+                </g>
+              </svg>
+              <label className={styles.addLabel}>Add</label>
+            </button>
+          </div>
         </div>
 
         {/* {!posts.length == 0 ? (
@@ -216,46 +220,47 @@ export default function Home() {
             </div>
           </div>
         )} */}
+        <div className={styles.bodyContent}>
+          {!posts.length == 0 &&
+            !isLoading &&
+            posts.map((post) => {
+              return (
+                <Card
+                  key={post.id}
+                  content={post}
+                  onDelete={fetchPosts}
+                  setToolSelected={handleSelectPost}
+                />
+              );
+            })}
 
-        {!posts.length == 0 &&
-          !isLoading &&
-          posts.map((post) => {
-            return (
-              <Card
-                key={post.id}
-                content={post}
-                onDelete={fetchPosts}
-                setToolSelected={handleSelectPost}
-              />
-            );
-          })}
-
-        {isLoading && (
-          <div className={styles.noPosts}>
-            <div className={styles.spinner}>
-              <h2 className={styles.loading}>Loading...</h2>
-              <Image
-                src="/spinner.gif"
-                alt="Not Found"
-                width={150}
-                height={150}
-              />
+          {isLoading && (
+            <div className={styles.noPosts}>
+              <div className={styles.spinner}>
+                <h2 className={styles.loading}>Loading...</h2>
+                <Image
+                  src="/spinner.gif"
+                  alt="Not Found"
+                  width={150}
+                  height={150}
+                />
+              </div>
             </div>
-          </div>
-        )}
-        {posts.length == 0 && !isLoading && (
-          <div className={styles.noPosts}>
-            <div className={styles.noPostsImg}>
-              <Image
-                src="/caveman.gif"
-                alt="Not Found"
-                width={500}
-                height={400}
-              />
-              <h2 className={styles.notFound}>Ooops, no posts found...</h2>
+          )}
+          {posts.length == 0 && !isLoading && (
+            <div className={styles.noPosts}>
+              <div className={styles.noPostsImg}>
+                <Image
+                  src="/caveman.gif"
+                  alt="Not Found"
+                  width={500}
+                  height={400}
+                />
+                <h2 className={styles.notFound}>Ooops, no posts found...</h2>
+              </div>
             </div>
-          </div>
-        )}
+          )}
+        </div>
 
         {addToolModal && (
           <Modal setAddModal={handleCloseModal} fetchPosts={fetchPosts} />
