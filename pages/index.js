@@ -26,8 +26,8 @@ export default function Home() {
     setIsLoading(true);
     const res = await fetch("https://bossa-box-api.herokuapp.com/tools");
     const data = await res.json();
-    setPosts(data);
-    setIsLoading(false);
+    await setPosts(data);
+    await setIsLoading(false);
   }
 
   async function fetchFilteredPosts() {
@@ -217,7 +217,8 @@ export default function Home() {
           </div>
         )} */}
 
-        {!posts.length == 0 && !isLoading && (
+        {!posts.length == 0 &&
+          !isLoading &&
           posts.map((post) => {
             return (
               <Card
@@ -227,10 +228,9 @@ export default function Home() {
                 setToolSelected={handleSelectPost}
               />
             );
-          })
-        )}
+          })}
 
-        { isLoading && (
+        {isLoading && (
           <div className={styles.noPosts}>
             <div className={styles.spinner}>
               <h2 className={styles.loading}>Loading...</h2>
@@ -243,7 +243,7 @@ export default function Home() {
             </div>
           </div>
         )}
-        { posts.length == 0 && !isLoading && (
+        {posts.length == 0 && !isLoading && (
           <div className={styles.noPosts}>
             <div className={styles.noPostsImg}>
               <Image
