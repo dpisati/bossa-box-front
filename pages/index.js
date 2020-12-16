@@ -130,7 +130,7 @@ export default function Home() {
               viewBox="0 0 61.414 61.42"
               style={{
                 fill: "none",
-                stroke: "#000",
+                stroke: "white",
                 strokeMiterlimit: 10,
                 strokeWidth: "10px",
                 transform: "rotate(45deg)",
