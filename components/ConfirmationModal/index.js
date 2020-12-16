@@ -18,6 +18,7 @@ export default function ConfirmationModal({ setAddModal, tool, fetchPosts }) {
   return (
     <div className={styles.modal}>
       <form
+        className={styles.form}
         onSubmit={handleSubmit}
         onKeyPress={(e) => {
           e.key === "Enter" && e.preventDefault();

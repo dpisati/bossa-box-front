@@ -21,6 +21,30 @@ export default function Home() {
   const [addToolModal, setAddToolModal] = useState(false);
   const [confirmationModal, setConfirmationModal] = useState(false);
 
+  const [theme, setTheme] = useState("light");
+
+  const saveTheme = (theme) => {
+    setTheme(theme);
+    localStorage.setItem("theme", theme);
+    document.documentElement.setAttribute("data-theme", theme);
+  };
+
+  useEffect(() => {
+    document.documentElement.setAttribute(
+      "data-theme",
+      localStorage.getItem("theme")
+    );
+    setTheme(localStorage.getItem("theme"));
+  }, []);
+
+  const switchTheme = () => {
+    if (theme === "light") {
+      saveTheme("dark");
+    } else {
+      saveTheme("light");
+    }
+  };
+
   async function fetchPosts() {
     // const res = await fetch("http://localhost:3000/tools");
     setIsLoading(true);
@@ -94,6 +118,10 @@ export default function Home() {
           <h1 className={styles.title}>VUTTR</h1>
           <h2 className={styles.subtitle}>Very Useful Tools to Remember</h2>
 
+          <button className={styles.themeSwitcher} onClick={switchTheme}>
+            Theme
+          </button>
+
           <button className={styles.addButtonMobile} onClick={handleAddPost}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -102,7 +130,7 @@ export default function Home() {
               viewBox="0 0 61.414 61.42"
               style={{
                 fill: "none",
-                stroke: "#FFFFFF",
+                stroke: "#000",
                 strokeMiterlimit: 10,
                 strokeWidth: "10px",
                 transform: "rotate(45deg)",
@@ -188,12 +216,12 @@ export default function Home() {
                   transform: "rotate(45deg)",
                   width: "15px",
                   height: "15px",
+                  backgroundColor: "transparent",
                 }}
               >
                 <defs></defs>
                 <g transform="translate(-568.793 -714.793)">
                   <path
-                    className="a"
                     d="M80,20.005l-60,60m60,0L20,20"
                     transform="translate(549.501 695.5)"
                   />
@@ -250,6 +278,7 @@ export default function Home() {
         {addToolModal && (
           <Modal
             setAddModal={handleCloseModal}
+            addModal={addModal}
             fetchPosts={fetchPosts}
             tool={toolSelected}
           />

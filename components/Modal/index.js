@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 
 import styles from "./Modal.module.css";
 
-export default function Modal({ setAddModal, fetchPosts, tool }) {
+export default function Modal({ addModal, setAddModal, fetchPosts, tool }) {
   const tagInput = useRef(null);
 
   let initialErrors = {};
@@ -115,12 +115,14 @@ export default function Modal({ setAddModal, fetchPosts, tool }) {
   return (
     <div className={styles.modal}>
       <form
+        className={styles.form}
         onSubmit={handleSubmit}
         onKeyPress={(e) => {
           e.key === "Enter" && e.preventDefault();
         }}
       >
-        <div className={styles.modalBody}>
+        {/* <div className={styles.modalBody}> */}
+        <div className={addModal ? styles.modalBody : styles.modalBodyOut}>
           <div className={styles.modalHeader}>
             <div className={styles.modalHeaderAdd}>
               {Object.keys(tool).length === 0 && (
@@ -129,7 +131,7 @@ export default function Modal({ setAddModal, fetchPosts, tool }) {
                   viewBox="0 0 61.414 61.42"
                   style={{
                     fill: "none",
-                    stroke: "#170C3A",
+                    stroke: "var(--text-color)",
                     strokeMiterlimit: 10,
                     strokeWidth: "10px",
                     transform: "rotate(45deg)",
@@ -163,9 +165,11 @@ export default function Modal({ setAddModal, fetchPosts, tool }) {
               viewBox="0 0 13.414 13.415"
               style={{
                 fill: "none",
-                stroke: "#8f8a9b",
+                // stroke: "#8f8a9b",
+                stroke: "var(--text-color)",
                 strokeMiterlimit: 10,
                 strokeWidth: "2px",
+                // color: "var(--text-color)",
               }}
             >
               <defs></defs>
@@ -179,7 +183,11 @@ export default function Modal({ setAddModal, fetchPosts, tool }) {
           <div className={styles.modalContent}>
             <label className={styles.modalLabel}>
               Tool Title{" "}
-              <span className={`${errors.title && styles.span}`}>*</span>
+              <span
+                className={`${errors.title ? styles.spanError : styles.span}`}
+              >
+                *
+              </span>
             </label>
             <input
               className={`${styles.modalInput} ${
@@ -198,7 +206,12 @@ export default function Modal({ setAddModal, fetchPosts, tool }) {
             )}
 
             <label className={styles.modalLabel}>
-              Link <span className={`${errors.link && styles.span}`}>*</span>
+              Link{" "}
+              <span
+                className={`${errors.title ? styles.spanError : styles.span}`}
+              >
+                *
+              </span>
             </label>
             <input
               className={`${styles.modalInput} ${
@@ -218,7 +231,11 @@ export default function Modal({ setAddModal, fetchPosts, tool }) {
 
             <label className={styles.modalLabel}>
               Description{" "}
-              <span className={`${errors.description && styles.span}`}>*</span>
+              <span
+                className={`${errors.title ? styles.spanError : styles.span}`}
+              >
+                *
+              </span>
             </label>
             <textarea
               className={`${styles.modalInputTextArea} ${
@@ -237,7 +254,12 @@ export default function Modal({ setAddModal, fetchPosts, tool }) {
             )}
 
             <label className={styles.modalLabel}>
-              Tags <span className={`${errors.tags && styles.span}`}>*</span>
+              Tags{" "}
+              <span
+                className={`${errors.title ? styles.spanError : styles.span}`}
+              >
+                *
+              </span>
             </label>
             <div className={styles.addTags}>
               <input
@@ -279,42 +301,40 @@ export default function Modal({ setAddModal, fetchPosts, tool }) {
                 </svg>
               </div>
 
-              <p>
-                <div className={styles.tagsContainer}>
-                  {tags &&
-                    tags.map((tag) => {
-                      return (
-                        <div
-                          className={styles.tag}
-                          value={tag}
-                          onClick={() => handleRemoveTag(tag)}
+              <div className={styles.tagsContainer}>
+                {tags &&
+                  tags.map((tag) => {
+                    return (
+                      <div
+                        className={styles.tag}
+                        value={tag}
+                        onClick={() => handleRemoveTag(tag)}
+                      >
+                        <p className={styles.tagText}>{tag}</p>
+                        <svg
+                          className={styles.removeTag}
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="10"
+                          height="10"
+                          viewBox="0 0 13.414 13.415"
+                          style={{
+                            fill: "none",
+                            stroke: "#8f8a9b",
+                            strokeMiterlimit: 10,
+                            strokeWidth: "2px",
+                          }}
                         >
-                          <p className={styles.tagText}>{tag}</p>
-                          <svg
-                            className={styles.removeTag}
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="10"
-                            height="10"
-                            viewBox="0 0 13.414 13.415"
-                            style={{
-                              fill: "none",
-                              stroke: "#8f8a9b",
-                              strokeMiterlimit: 10,
-                              strokeWidth: "2px",
-                            }}
-                          >
-                            <defs></defs>
-                            <path
-                              className="a"
-                              d="M32,20,20,32m12,0L20,20"
-                              transform="translate(-19.292 -19.293)"
-                            />
-                          </svg>
-                        </div>
-                      );
-                    })}
-                </div>
-              </p>
+                          <defs></defs>
+                          <path
+                            className="a"
+                            d="M32,20,20,32m12,0L20,20"
+                            transform="translate(-19.292 -19.293)"
+                          />
+                        </svg>
+                      </div>
+                    );
+                  })}
+              </div>
             </div>
           </div>
 
