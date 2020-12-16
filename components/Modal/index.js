@@ -123,29 +123,36 @@ export default function Modal({ setAddModal, fetchPosts, tool }) {
         <div className={styles.modalBody}>
           <div className={styles.modalHeader}>
             <div className={styles.modalHeaderAdd}>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 61.414 61.42"
-                style={{
-                  fill: "none",
-                  stroke: "#170C3A",
-                  strokeMiterlimit: 10,
-                  strokeWidth: "10px",
-                  transform: "rotate(45deg)",
-                  width: "12px",
-                  height: "12px",
-                }}
-              >
-                <defs></defs>
-                <g transform="translate(-568.793 -714.793)">
-                  <path
-                    className="a"
-                    d="M80,20.005l-60,60m60,0L20,20"
-                    transform="translate(549.501 695.5)"
-                  />
-                </g>
-              </svg>
-              <h3 className={styles.modalTitle}>Add a new tool</h3>
+              {Object.keys(tool).length === 0 && (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 61.414 61.42"
+                  style={{
+                    fill: "none",
+                    stroke: "#170C3A",
+                    strokeMiterlimit: 10,
+                    strokeWidth: "10px",
+                    transform: "rotate(45deg)",
+                    width: "12px",
+                    height: "12px",
+                  }}
+                >
+                  <defs></defs>
+                  <g transform="translate(-568.793 -714.793)">
+                    <path
+                      className="a"
+                      d="M80,20.005l-60,60m60,0L20,20"
+                      transform="translate(549.501 695.5)"
+                    />
+                  </g>
+                </svg>
+              )}
+
+              <h3 className={styles.modalTitle}>
+                {Object.keys(tool).length === 0
+                  ? "Add a new tool"
+                  : "Update tool"}
+              </h3>
             </div>
             <svg
               className={styles.closeModal}
