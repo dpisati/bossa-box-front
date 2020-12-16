@@ -265,10 +265,10 @@ export default function Home() {
             <div className={styles.noPosts}>
               <div className={styles.noPostsImg}>
                 <Image
-                  src="/caveman.gif"
+                  src="/notfound.gif"
                   alt="Not Found"
-                  width={500}
-                  height={400}
+                  width={200}
+                  height={200}
                 />
                 <h2 className={styles.notFound}>Ooops, no posts found...</h2>
               </div>
