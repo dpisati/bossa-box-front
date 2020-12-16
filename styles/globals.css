@@ -15,11 +15,15 @@
   --text-color: #170c3a;
   --text-color-secondary: #b3c5cd;
 
-  --primary-color: #21b6b7;
+  --primary-color: #365df0;
+  --primary-color-hover: #2f55cc;
+  --primary-color-active: #244aa8;
 
   --background-color: #f9f9f9;
   --background-color-light: white;
   --background-color-dark: #eef3f6;
+
+  --tag-hover: #d3d3d3;
 
   --font-family: "Poppins", sans-serif;
   --box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.05);
@@ -29,9 +33,13 @@
   --text-color: #f0f0f0;
   --text-color-secondary: #b3c5cd;
 
-  --primary-color: #21b6b7;
+  --primary-color: #170c3a;
+  --primary-color-hover: #353372;
+  --primary-color-active: #b2a9df;
 
-  --background-color: #252329;
-  --background-color-light: #3c393f;
-  --background-color-dark: #120f13;
+  --tag-hover: #6554c0;
+
+  --background-color: #170c3a;
+  --background-color-light: #4c4499;
+  --background-color-dark: #353372;
 }

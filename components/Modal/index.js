@@ -322,6 +322,7 @@ export default function Modal({ addModal, setAddModal, fetchPosts, tool }) {
                             stroke: "#8f8a9b",
                             strokeMiterlimit: 10,
                             strokeWidth: "2px",
+                            backgroundColor: "transparent",
                           }}
                         >
                           <defs></defs>
