@@ -229,7 +229,7 @@
     width: 100vw;
     padding: 0 20px;
     z-index: 100;
-    background-color: white;
+    background-color: var(--background-color-light);
     -webkit-box-shadow: 0px 0px 15px -1px rgba(0, 0, 0, 0.59);
     -moz-box-shadow: 0px 0px 15px -1px rgba(0, 0, 0, 0.59);
     box-shadow: 0px 0px 15px -1px rgba(0, 0, 0, 0.59);

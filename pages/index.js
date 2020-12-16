@@ -136,6 +136,7 @@ export default function Home() {
                 transform: "rotate(45deg)",
                 width: "15px",
                 height: "15px",
+                backgroundColor: "transparent",
               }}
             >
               <defs></defs>
