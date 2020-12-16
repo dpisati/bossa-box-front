@@ -21,14 +21,19 @@
   margin-right: 15px;
 }
 
-.removeButton {
+.cardButtons {
+  display: flex;
+}
+
+.removeButton,
+.updateButton {
   background: #f95e5a 0% 0% no-repeat padding-box;
   border-radius: 5px;
-  width: 174px;
-  height: 50px;
+  width: 144px;
+  height: 45px;
   display: flex;
   justify-content: space-between;
-  padding: 0 30px;
+  padding: 0 20px;
   align-items: center;
   text-align: center;
   font: normal normal 600 18px/24px Source Sans Pro;
@@ -40,6 +45,10 @@
   border: none;
 }
 
+.updateButton {
+  background-color: #ffbb43;
+  margin-right: 20px;
+}
 .removeButton:hover {
   background: #cc4c4c 0% 0% no-repeat padding-box;
 }
@@ -47,22 +56,45 @@
 .removeButton:active {
   background: #a53f3f 0% 0% no-repeat padding-box;
 }
+.updateButton:hover {
+  background: #d89c3a 0% 0% no-repeat padding-box;
+}
 
-.removeText {
+.updateButton:active {
+  background: #996c2b 0% 0% no-repeat padding-box;
+}
+
+.removeText,
+.updateText {
   color: white;
 }
 
+@media only screen and (max-width: 850px) {
+  .removeButton,
+  .updateButton {
+    width: 124px;
+    height: 40px;
+    padding: 0 15px;
+  }
+}
+
 @media only screen and (max-width: 640px) {
-  .removeButton {
+  .removeButton,
+  .updateButton {
     padding: 0;
     margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 50px;
-    height: 50px;
+    width: 35px;
+    height: 35px;
   }
-  .removeText {
+
+  .updateButton {
+    margin-right: 10px;
+  }
+  .removeText,
+  .updateText {
     display: none;
   }
 }

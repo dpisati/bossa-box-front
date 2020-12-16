@@ -28,6 +28,7 @@ export default function Home() {
     const data = await res.json();
     await setPosts(data);
     await setIsLoading(false);
+    setToolSelected({});
   }
 
   async function fetchFilteredPosts() {
@@ -57,12 +58,19 @@ export default function Home() {
     setAddModal(false);
     setAddToolModal(false);
     setConfirmationModal(false);
+    setToolSelected({});
   }
 
   function handleSelectPost(content) {
     setToolSelected(content);
     setAddModal(true);
     setConfirmationModal(true);
+  }
+
+  function handleUpdatePost(content) {
+    setToolSelected(content);
+    setAddModal(true);
+    setAddToolModal(true);
   }
 
   useEffect(() => {
@@ -196,30 +204,6 @@ export default function Home() {
           </div>
         </div>
 
-        {/* {!posts.length == 0 ? (
-          posts.map((post) => {
-            return (
-              <Card
-                key={post.id}
-                content={post}
-                onDelete={fetchPosts}
-                setToolSelected={handleSelectPost}
-              />
-            );
-          })
-        ) : (
-          <div className={styles.noPosts}>
-            <div className={styles.noPostsImg}>
-              <Image
-                src="/caveman.gif"
-                alt="Not Found"
-                width={500}
-                height={400}
-              />
-              <h2 className={styles.notFound}>Ooops, no posts found...</h2>
-            </div>
-          </div>
-        )} */}
         <div className={styles.bodyContent}>
           {!posts.length == 0 &&
             !isLoading &&
@@ -230,6 +214,7 @@ export default function Home() {
                   content={post}
                   onDelete={fetchPosts}
                   setToolSelected={handleSelectPost}
+                  updatePost={handleUpdatePost}
                 />
               );
             })}
@@ -263,14 +248,18 @@ export default function Home() {
         </div>
 
         {addToolModal && (
-          <Modal setAddModal={handleCloseModal} fetchPosts={fetchPosts} />
+          <Modal
+            setAddModal={handleCloseModal}
+            fetchPosts={fetchPosts}
+            tool={toolSelected}
+          />
         )}
 
         {toolSelected && confirmationModal && (
           <ConfirmationModal
             setAddModal={handleCloseModal}
-            tool={toolSelected}
             fetchPosts={fetchPosts}
+            tool={toolSelected}
           />
         )}
       </main>

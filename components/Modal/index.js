@@ -1,8 +1,8 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import styles from "./Modal.module.css";
 
-export default function Modal({ setAddModal, fetchPosts }) {
+export default function Modal({ setAddModal, fetchPosts, tool }) {
   const tagInput = useRef(null);
 
   let initialErrors = {};
@@ -32,7 +32,28 @@ export default function Modal({ setAddModal, fetchPosts }) {
     }
     setErrors(initialErrors);
 
-    if (Object.keys(initialErrors).length === 0) {
+    if (
+      Object.keys(tool).length > 0 &&
+      Object.keys(initialErrors).length === 0
+    ) {
+      await fetch(`https://bossa-box-api.herokuapp.com/tools/${tool.id}`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          title,
+          link,
+          description,
+          tags,
+        }),
+      });
+      fetchPosts();
+      handleCloseModal();
+    }
+
+    if (
+      Object.keys(tool).length === 0 &&
+      Object.keys(initialErrors).length === 0
+    ) {
       // await fetch("http://localhost:3000/tools", {
       await fetch("https://bossa-box-api.herokuapp.com/tools", {
         method: "POST",
@@ -81,6 +102,15 @@ export default function Modal({ setAddModal, fetchPosts }) {
   function handleFocus() {
     tagInput.current.focus();
   }
+
+  useEffect(() => {
+    if (Object.keys(tool).length > 0) {
+      setTitle(tool.title);
+      setDescription(tool.description);
+      setLink(tool.link);
+      setTags(tool.tags);
+    }
+  }, []);
 
   return (
     <div className={styles.modal}>
