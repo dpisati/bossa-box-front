@@ -282,7 +282,7 @@ export default function Modal({ setAddModal, fetchPosts, tool }) {
                           value={tag}
                           onClick={() => handleRemoveTag(tag)}
                         >
-                          <p>{tag}</p>
+                          <p className={styles.tagText}>{tag}</p>
                           <svg
                             className={styles.removeTag}
                             xmlns="http://www.w3.org/2000/svg"
