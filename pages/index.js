@@ -30,11 +30,16 @@ export default function Home() {
   };
 
   useEffect(() => {
-    document.documentElement.setAttribute(
-      "data-theme",
-      localStorage.getItem("theme")
-    );
-    setTheme(localStorage.getItem("theme"));
+    if(localStorage.getItem("theme") == null) {
+      console.log("is null")
+      setTheme("light")
+    } else {
+      document.documentElement.setAttribute(
+        "data-theme",
+        localStorage.getItem("theme")
+      );
+      setTheme(localStorage.getItem("theme"));
+    }
   }, []);
 
   const switchTheme = () => {
@@ -121,6 +126,7 @@ export default function Home() {
                 <input
                   // value={theme}
                   checked={theme === "light" ? true : false}
+                  defaultChecked={theme === "light" ? true : false}
                   type="checkbox"
                   onChange={switchTheme}
                   className={styles.slider123}
