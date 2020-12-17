@@ -119,6 +119,8 @@ export default function Home() {
             <div className={styles.test}>
               <label id="switch" className={styles.switch123}>
                 <input
+                  // value={theme}
+                  checked={theme === "light" ? true : false}
                   type="checkbox"
                   onChange={switchTheme}
                   className={styles.slider123}
