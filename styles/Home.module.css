@@ -346,7 +346,10 @@
   }
 
   .addButtonMobile {
+    width: 100px;
     position: absolute;
+    margin-right: 0;
+    padding: 0 20px;
     top: 15px;
     bottom: 170px;
     left: auto;
@@ -355,6 +358,6 @@
 
   .test {
     top: 17px;
-    left: -60px;
+    left: 0px;
   }
 }
