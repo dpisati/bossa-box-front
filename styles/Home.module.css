@@ -375,7 +375,7 @@
   }
 
   .searchInputTagContainer {
-    padding-right: 20px;
+    padding-right: 0px;
   }
 
   /* .searchInput {
@@ -434,7 +434,8 @@
     align-items: center;
   } */
   .searchLabel {
-    margin-left: 20px;
+    margin-left: 0px;
+    font-size: 4vw;
   }
   .headerLeft {
     display:flex;
