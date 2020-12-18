@@ -43,7 +43,7 @@
 .searchInput,
 .modalInput,
 .modalInputTextArea {
-  padding: 10px 10px 10px 50px;
+  padding: 10px 10px 10px 40px;
   margin-right: 20px;
   max-width: 400px;
   height: 40px;
@@ -202,8 +202,6 @@
 .reactSwitch {
   transform: scale(0.7);
 }
-
-
 
 /* //////////////////////////////////////////////////////////////////////////////////// */
 .switchContainer {
