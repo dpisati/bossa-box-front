@@ -168,6 +168,43 @@
   margin-bottom: 30px;
 }
 
+.topHeader {
+  position: fixed;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  padding: 0 45px;
+  z-index: 100;
+}
+.title {
+  margin-top: 20px;
+}
+.header {
+  margin-bottom: 15px;
+}
+
+.addButtonMobile {    
+  top: 20px;
+}
+.bodyContent {
+  padding-top: 220px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+.searchInputTagContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.reactSwitch {
+  transform: scale(0.7);
+}
+
+
+
 /* //////////////////////////////////////////////////////////////////////////////////// */
 .switchContainer {
   max-width: 1100px;
@@ -190,6 +227,9 @@
   left: 0;
   bottom: 0;
   right: 0;
+}
+.test {
+  top: 20px;
 }
 
 /* The switch - the box around the slider */
@@ -273,6 +313,18 @@
   .main {
     padding: 0 50px;
   }
+
+  .topHeader {
+    -webkit-box-shadow: 0px 0px 18px -9px rgba(0,0,0,0.81); 
+    box-shadow: 0px 0px 18px -9px rgba(0,0,0,0.81);
+  }
+  
+  .bodyContent {
+    padding-top: 220px;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
 }
 
 @media only screen and (max-width: 850px) {
@@ -282,7 +334,7 @@
   .addButtonMobile {
     display: flex;
     position: fixed;
-    top: 50px;
+    top: 20px;
     right: 50px;
   }
 }
@@ -295,6 +347,7 @@
 
   .title {
     margin-top: 18px;
+    margin-bottom: 18px;
   }
 
   .subtitle {
@@ -304,24 +357,35 @@
     margin-top: 18px;
     margin-bottom: 18px;
   }
+  
 
   .headerLeft {
     width: 100%;
     position: relative;
-    display: block;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
   .searchInputContiner {
-    width: 100%;
+    width: 60%;
     position: relative;
   }
 
   .searchInput {
     width: 100%;
+  }
+
+  .searchInputTagContainer {
+    padding-right: 20px;
+  }
+
+  /* .searchInput {
+    width: 100%;
     max-width: 100%;
     margin: 0;
     margin-bottom: 20px;
-  }
+  } */
   .addLabel {
     text-align: right;
   }
@@ -330,7 +394,7 @@
   }
   .topHeader {
     position: fixed;
-    bottom: -150px;
+    bottom: -100px;
     left: 0;
     width: 100vw;
     padding: 0 20px;
@@ -357,7 +421,25 @@
   }
 
   .test {
-    top: 17px;
-    left: 0px;
+    top: 19px;
+    left: -10px;
+    transform: scale(0.8);
   }
+
+  .bodyContent {
+    padding-top: 0;
+  }
+
+  /* .searchInputContiner {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+  } */
+  .searchLabel {
+    margin-left: 20px;
+  }
+  .headerLeft {
+    display:flex;
+  }
+
 }
