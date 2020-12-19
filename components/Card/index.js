@@ -12,7 +12,7 @@ export default function Card({ content, setToolSelected, updatePost }) {
   return (
     <div className={styles.card}>
       <div className={styles.cardHeader}>
-        <a target="_blank" href={content.link} rel="noopener noreferrer">
+        <a target="_blank" href={content.link} rel="noopener noreferrer" prefetch={false}>
           <h3 className={styles.title}>{content.title}</h3>
         </a>
 

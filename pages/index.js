@@ -117,7 +117,7 @@ export default function Home() {
     <div className={styles.container}>
       <Head>
         <title>VUTTR</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.ico" preload={false} />
         <meta name="description" content="Very Useful Tools to Remember website will help you to note all yours useful features." />
       </Head>
 
