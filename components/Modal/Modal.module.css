@@ -37,6 +37,7 @@
 
 .confirmationModal {
   margin-left: 0px;
+  font-size: 16px;
 }
 
 .closeModal {
@@ -287,27 +288,73 @@
   background: transparent;
 }
 
+.modalContentConfirmation {
+  margin-top: 20px;
+}
+
+.modalTextConfirmation {
+  font-size: 0.8rem;
+  margin: 0 10px;
+}
+
 @media only screen and (max-width: 640px) {
   .modalBody {
     width: 90vw;
+    padding: 20px;
   }
   
   .modalContent {
     padding: 0;
   }
-  .modalFooter {
-    margin-top: 30px;
+  .modalHeader {
+    margin-bottom: 0;
   }
+  .modalTitle, .modalLabel {
+    margin: 0;
+    margin-bottom: 0;
+  }
+  .modalFooter {
+    margin-top: 15px;
+    
+  }
+  
   .modalLabel {
-    margin-bottom: 8px;
-  margin-top: 20px;
+    margin-bottom: 4px;
+    margin-top: 5px;
+    font-size: 0.8rem;
   }
   .modalInput,
   .modalInputTextArea {
-    font: normal normal normal 16px/25px Source Sans Pro;
+    height: 30px;
+    padding: 5px 10px;
+    font: normal normal normal 14px/25px Source Sans Pro;
   }
+
+  .modalInputTextArea {
+    min-height: 80px;
+  }
+  .addTagField {
+    top: 2px;
+    right: 2px;
+    height: 25px;
+    width: 25px;
+  }
+  .tagsContainer {
+    margin-top: 10px;
+  }
+  .tag {
+    height: 25px;
+  }
+
   .tagText {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     background: transparent;
+  }
+  .addButton,
+  .saveButton,
+  .cancelButton {
+    height: 30px;
+    width: 80px;
+    font-size: 0.8rem;
   }
 }

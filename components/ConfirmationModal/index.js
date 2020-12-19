@@ -1,5 +1,6 @@
 import styles from "../Modal/Modal.module.css";
 
+
 export default function ConfirmationModal({ setAddModal, tool, fetchPosts }) {
   async function handleSubmit(e) {
     e.preventDefault();
@@ -51,8 +52,8 @@ export default function ConfirmationModal({ setAddModal, tool, fetchPosts }) {
               />
             </svg>
           </div>
-          <div className={styles.modalContent}>
-            <p>{`Are you sure to remove the tool "${tool.title}" from the list?`}</p>
+          <div className={styles.modalContentConfirmation}>
+            <p className={styles.modalTextConfirmation}>{`Are you sure to remove the tool "${tool.title}" from the list?`}</p>
           </div>
 
           <footer className={styles.modalFooter}>
