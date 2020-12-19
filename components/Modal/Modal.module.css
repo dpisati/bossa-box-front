@@ -291,11 +291,16 @@
   .modalBody {
     width: 90vw;
   }
+  
   .modalContent {
     padding: 0;
   }
   .modalFooter {
     margin-top: 30px;
+  }
+  .modalLabel {
+    margin-bottom: 8px;
+  margin-top: 20px;
   }
   .modalInput,
   .modalInputTextArea {

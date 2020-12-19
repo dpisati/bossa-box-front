@@ -168,7 +168,7 @@ export default function Home() {
           </div>
 
           <div className={styles.logo}>
-            <Image src={'/panda.png'} width={60} height={45} />
+            {theme && theme === "light" ? <Image src={'/panda.png'} width={45} height={35} /> : <Image src={'/pandaDark.png'} width={45} height={35} />}
             <h1 className={styles.title}>VUTTR</h1>
           </div>
 
