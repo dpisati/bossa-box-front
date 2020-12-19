@@ -11,6 +11,14 @@
 .title {
   margin-top: 50px;
   margin-bottom: 25px;
+  margin-left: 10px;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+   -khtml-user-select: none; /* Konqueror HTML */
+     -moz-user-select: none; /* Old versions of Firefox */
+      -ms-user-select: none; /* Internet Explorer/Edge */
+          user-select: none; /* Non-prefixed version, currently
+                                supported by Chrome, Edge, Opera and Firefox */
 }
 
 .header {
@@ -24,6 +32,12 @@
 .headerLeft {
   position: relative;
   display: flex;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  justify-content: flex-start;
   align-items: center;
 }
 
@@ -212,7 +226,7 @@
   justify-content: center; */
 }
 
-.test {
+.themeSwitch {
   background-color: transparent;
   display: flex;
   height: 40px;
@@ -226,12 +240,12 @@
   bottom: 0;
   right: 0;
 }
-.test {
+.themeSwitch {
   top: 20px;
 }
 
 /* The switch - the box around the slider */
-.switch123 {
+.switch {
   position: relative;
   display: inline-block;
   width: 50px;
@@ -239,14 +253,14 @@
 }
 
 /* Hide default HTML checkbox */
-.switch123 input {
+.switch input {
   opacity: 0;
   width: 0;
   height: 0;
 }
 
 /* The slider */
-.slider321 {
+.slider {
   position: absolute;
   cursor: pointer;
   top: 0;
@@ -258,7 +272,7 @@
   transition: 0.4s;
 }
 
-.slider321:before {
+.slider:before {
   position: absolute;
   content: "";
   height: 30px;
@@ -278,15 +292,15 @@
   background-position: center;
 }
 
-.slider123:checked + .slider321 {
+.slider:checked + .slider {
   background-color: #2196f3;
 }
 
-.slider123:focus + .slider321 {
+.slider:focus + .slider {
   box-shadow: 0 0 1px #2196f3;
 }
 
-.slider123:checked + .slider321:before {
+.slider:checked + .slider:before {
   -webkit-transform: translateX(24px);
   -ms-transform: translateX(24px);
   transform: translateX(24px);
@@ -297,11 +311,11 @@
 }
 
 /* Rounded sliders */
-.slider321.round123 {
+.slider.round {
   border-radius: 34px;
 }
 
-.slider321.round123:before {
+.slider.round:before {
   border-radius: 50%;
 }
 
@@ -346,6 +360,7 @@
   .title {
     margin-top: 18px;
     margin-bottom: 18px;
+    font-size: 1.5rem;
   }
 
   .subtitle {
@@ -412,15 +427,15 @@
     position: absolute;
     margin-right: 0;
     padding: 0 20px;
-    top: 15px;
+    top: 10px;
     bottom: 170px;
     left: auto;
     right: 0px;
   }
 
-  .test {
-    top: 19px;
-    left: -10px;
+  .themeSwitch {
+    top: 15px;
+    left: 40px;
     transform: scale(0.8);
   }
 

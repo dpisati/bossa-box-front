@@ -123,18 +123,17 @@ export default function Home() {
       <main className={`${styles.main} ${addModal && styles.modalIsOpen}`}>
         <div className={styles.topHeader}>
           <div className={styles.switchContainer}>
-            <div className={styles.test}>
-              <label id="switch" className={styles.switch123}>
+            <div className={styles.themeSwitch}>
+              <label id="switch" className={styles.switch}>
                 <input
-                  // value={theme}
                   checked={theme === "light" ? true : false}
                   defaultChecked={theme === "light" ? true : false}
                   type="checkbox"
                   onChange={switchTheme}
-                  className={styles.slider123}
+                  className={styles.slider}
                 />
                 <span
-                  className={`${styles.slider321} ${styles.round123}`}
+                  className={`${styles.slider} ${styles.round}`}
                 ></span>
               </label>
             </div>
@@ -168,7 +167,11 @@ export default function Home() {
             </button>
           </div>
 
-          <h1 className={styles.title}>VUTTR</h1>
+          <div className={styles.logo}>
+            <Image src={'/panda.png'} width={60} height={45} />
+            <h1 className={styles.title}>VUTTR</h1>
+          </div>
+
           <h2 className={styles.subtitle}>Very Useful Tools to Remember</h2>
 
           {/* <button className={styles.themeSwitcher} onClick={switchTheme}>
