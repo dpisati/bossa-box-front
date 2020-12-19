@@ -366,4 +366,8 @@
     width: 80px;
     font-size: 0.8rem;
   }
+
+  .modalErrorMessage {
+    font-size: 0.8rem;
+  }
 }
