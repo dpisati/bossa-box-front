@@ -233,6 +233,7 @@ export default function Home() {
                   width={48}
                   className={styles.reactSwitch}
                   id="tags-only"
+                  aria-checked={searchForTags}
                 />
                  
                 <label htmlFor="tags-only" className={styles.searchLabel}>
