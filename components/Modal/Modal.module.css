@@ -293,8 +293,9 @@
 }
 
 .modalTextConfirmation {
-  font-size: 0.8rem;
+  font-size: 1rem;
   margin: 0 10px;
+
 }
 
 @media only screen and (max-width: 640px) {
@@ -318,7 +319,7 @@
     margin-left: 10px;
   }
   .modalFooter {
-    margin-top: 15px;
+    margin-top: 25px;
     
   }
   
@@ -337,6 +338,10 @@
   .modalInputTextArea {
     min-height: 80px;
   }
+  
+.modalTextConfirmation {
+  font-size: 0.8rem;
+}
   .addTagField {
     top: 2px;
     right: 2px;
