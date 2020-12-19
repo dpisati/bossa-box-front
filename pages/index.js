@@ -4,9 +4,11 @@ import { useEffect, useState } from "react";
 
 import styles from "../styles/Home.module.css";
 
-import Card from "../components/Card";
-import Modal from "../components/Modal";
-import ConfirmationModal from "../components/ConfirmationModal";
+import loadable from '@loadable/component'
+
+const Card = loadable(() => import('../components/Card'));
+const Modal = loadable(() => import('../components/Modal'));
+const ConfirmationModal = loadable(() => import('../components/ConfirmationModal'));
 
 import Switch from "react-switch";
 
