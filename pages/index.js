@@ -53,7 +53,6 @@ export default function Home() {
   };
 
   async function fetchPosts() {
-    // const res = await fetch("http://localhost:3000/tools");
     setIsLoading(true);
     const res = await fetch("https://bossa-box-api.herokuapp.com/tools");
     const data = await res.json();
@@ -64,7 +63,6 @@ export default function Home() {
 
   async function fetchFilteredPosts() {
     if (!searchForTags) {
-      // const res = await fetch(`http://localhost:3000/tools?q=${searchInput}`);
       const res = await fetch(
         `https://bossa-box-api.herokuapp.com/tools?q=${searchInput}`
       );
@@ -72,7 +70,6 @@ export default function Home() {
       setPosts(data);
     } else {
       const res = await fetch(
-        // `http://localhost:3000/tools?tags_like=${searchInput}`
         `https://bossa-box-api.herokuapp.com/tools?tags_like=${searchInput}`
       );
       const data = await res.json();
@@ -114,18 +111,21 @@ export default function Home() {
   }, []);
 
   return (
+
     <div className={styles.container}>
       <Head>
         <title>VUTTR</title>
         <link rel="icon" href="/favicon.ico" />
+        <meta name="description" content="Very Useful Tools to Remember website will help you to note all yours useful features." />
       </Head>
 
       <main className={`${styles.main} ${addModal && styles.modalIsOpen}`}>
         <div className={styles.topHeader}>
           <div className={styles.switchContainer}>
             <div className={styles.themeSwitch}>
-              <label id="switch" className={styles.switch}>
+              <label className={styles.switch}>              
                 <input
+                  id="switch"
                   checked={theme === "light" ? true : false}
                   defaultChecked={theme === "light" ? true : false}
                   type="checkbox"
@@ -135,6 +135,7 @@ export default function Home() {
                 <span
                   className={`${styles.slider} ${styles.round}`}
                 ></span>
+                <label htmlFor="switch" className={styles.switchLabel}>Theme Switch</label>
               </label>
             </div>
             <button className={styles.addButtonMobile} onClick={handleAddPost}>
@@ -163,20 +164,16 @@ export default function Home() {
                   />
                 </g>
               </svg>
-              <label className={styles.addLabel}>Add</label>
+              <label htmlFor="add" className={styles.addLabel}>Add</label>
             </button>
           </div>
 
           <div className={styles.logo}>
-            {theme && theme === "light" ? <Image src={'/panda.png'} width={45} height={35} /> : <Image src={'/pandaDark.png'} width={45} height={35} />}
+            {theme && theme === "light" ? <Image src={'/panda.png'} width={45} height={35} alt="Light Panda"/> : <Image src={'/pandaDark.png'} width={45} height={35} alt="Dark Panda"/>}
             <h1 className={styles.title}>VUTTR</h1>
           </div>
 
           <h2 className={styles.subtitle}>Very Useful Tools to Remember</h2>
-
-          {/* <button className={styles.themeSwitcher} onClick={switchTheme}>
-            Theme
-          </button> */}
 
           <div className={styles.header}>
             <div className={styles.headerLeft}>
@@ -211,12 +208,14 @@ export default function Home() {
                   </g>
                 </svg>
                 <input
+                  id="search-input"
                   className={styles.searchInput}
                   type="text"
                   placeholder="search"
                   value={searchInput}
                   onChange={(e) => setSearchInput(e.target.value)}
                 ></input>
+                <label htmlFor="search-input" className={styles.searchInputLabel}>Search Input</label>
               </div>
               <div className={styles.searchInputTagContainer}>
 
@@ -233,10 +232,10 @@ export default function Home() {
                   height={20}
                   width={48}
                   className={styles.reactSwitch}
-                  id="material-switch"
+                  id="tags-only"
                 />
                  
-                <label className={styles.searchLabel}>
+                <label htmlFor="tags-only" className={styles.searchLabel}>
                   tags only
                 </label>
               </div>
@@ -293,7 +292,7 @@ export default function Home() {
                 <h2 className={styles.loading}>Loading...</h2>
                 <Image
                   src="/spinner.gif"
-                  alt="Not Found"
+                  alt="Spinner"
                   width={150}
                   height={150}
                 />

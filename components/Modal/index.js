@@ -181,7 +181,7 @@ export default function Modal({ addModal, setAddModal, fetchPosts, tool }) {
             </svg>
           </div>
           <div className={styles.modalContent}>
-            <label className={styles.modalLabel}>
+            <label htmlFor="title" className={styles.modalLabel}>
               Tool Title{" "}
               <span
                 className={`${errors.title ? styles.spanError : styles.span}`}
@@ -205,7 +205,7 @@ export default function Modal({ addModal, setAddModal, fetchPosts, tool }) {
               <p className={styles.modalErrorMessage}>{errors.title}</p>
             )}
 
-            <label className={styles.modalLabel}>
+            <label htmlFor="link" className={styles.modalLabel}>
               Link{" "}
               <span
                 className={`${errors.title ? styles.spanError : styles.span}`}
@@ -229,7 +229,7 @@ export default function Modal({ addModal, setAddModal, fetchPosts, tool }) {
               <p className={styles.modalErrorMessage}>{errors.link}</p>
             )}
 
-            <label className={styles.modalLabel}>
+            <label htmlFor="description" className={styles.modalLabel}>
               Description{" "}
               <span
                 className={`${errors.title ? styles.spanError : styles.span}`}
@@ -253,7 +253,7 @@ export default function Modal({ addModal, setAddModal, fetchPosts, tool }) {
               <p className={styles.modalErrorMessage}>{errors.description}</p>
             )}
 
-            <label className={styles.modalLabel}>
+            <label htmlFor="tags" className={styles.modalLabel}>
               Tags{" "}
               <span
                 className={`${errors.title ? styles.spanError : styles.span}`}
