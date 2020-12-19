@@ -313,6 +313,10 @@
     margin: 0;
     margin-bottom: 0;
   }
+
+  .modalTitle {
+    margin-left: 10px;
+  }
   .modalFooter {
     margin-top: 15px;
     
