@@ -39,6 +39,9 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  /* background-color:tomato; */
+  width: 155px;
+  height: 70px;
 }
 
 .searchInputContiner {
