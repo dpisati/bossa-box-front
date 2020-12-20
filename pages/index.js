@@ -172,8 +172,8 @@ export default function Home() {
           </div>
 
           <div className={styles.logo}>
-            {/* {theme && theme === "light" ? <Image src={'/panda.png'} width={45} height={35} className={styles.panda} alt="Light Panda"/> : <Image src={'/pandaDark.png'} width={45} height={35} className={styles.panda} alt="Dark Panda"/>} */}
-            <Image src={'/panda.png'} width={45} height={35} className={styles.panda} alt="Light Panda"/>
+            {/* {theme && theme === "light" ? <Image src={'/panda.png'} width={45} height={35} alt="Light Panda"/> : <Image src={'/pandaDark.png'} width={45} height={35} alt="Dark Panda"/>} */}
+            
             <h1 className={styles.title}>VUTTR</h1>
           </div>
 
@@ -295,24 +295,24 @@ export default function Home() {
             <div className={styles.noPosts}>
               <div className={styles.spinner}>
                 <h2 className={styles.loading}>Loading...</h2>
-                {/* <Image
+                <Image
                   src="/spinner.gif"
                   alt="Spinner"
                   width={150}
                   height={150}
-                /> */}
+                />
               </div>
             </div>
           )}
           {posts.length == 0 && !isLoading && (
             <div className={styles.noPosts}>
               <div className={styles.noPostsImg}>
-                {/* <Image
+                <Image
                   src="/notfound.gif"
                   alt="Not Found"
                   width={200}
                   height={200}
-                /> */}
+                />
                 <h2 className={styles.notFound}>Ooops, no posts found...</h2>
               </div>
             </div>
