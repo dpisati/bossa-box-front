@@ -172,7 +172,8 @@ export default function Home() {
           </div>
 
           <div className={styles.logo}>
-            {theme && theme === "light" ? <Image src={'/panda.png'} width={45} height={35} className={styles.panda} alt="Light Panda"/> : <Image src={'/pandaDark.png'} width={45} height={35} className={styles.panda} alt="Dark Panda"/>}
+            {/* {theme && theme === "light" ? <Image src={'/panda.png'} width={45} height={35} className={styles.panda} alt="Light Panda"/> : <Image src={'/pandaDark.png'} width={45} height={35} className={styles.panda} alt="Dark Panda"/>} */}
+            <Image src={'/panda.png'} width={45} height={35} className={styles.panda} alt="Light Panda"/>
             <h1 className={styles.title}>VUTTR</h1>
           </div>
 
