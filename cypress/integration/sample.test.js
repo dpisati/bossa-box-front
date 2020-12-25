@@ -2,7 +2,7 @@ const { get } = require("http")
 
 describe('Visit the webpage', () => {
     it('Visits the Kitchen Sink', () => {
-      cy.visit('https://bossa-box-front.vercel.app/')
+      cy.visit('http://localhost:3000/')
     })
   })
 
