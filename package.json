@@ -6,21 +6,7 @@
   "scripts": {
     "dev": "next dev -p 3335",
     "build": "next build",
-    "start": "next start",
-    "test": "jest"
-  },
-  "jest": {
-    "testPathIgnorePatterns": [
-      "<rootDir>/.next/",
-      "<rootDir>/node_modules/"
-    ],
-    "transform": {
-      "^.+\\.(js|jsx|ts|tsx)$": "<rootDir>/node_modules/babel-jest"
-    },
-    "moduleNameMapper": {
-      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
-      "\\.(css|less)$": "<rootDir>/__mocks__/styleMock.js"
-    }
+    "start": "next start"
   },
   "dependencies": {
     "@babel/preset-react": "^7.12.10",
@@ -34,7 +20,7 @@
     "@babel/plugin-proposal-class-properties": "^7.12.1",
     "@babel/preset-env": "^7.12.11",
     "@testing-library/dom": "^7.29.0",
-    "@testing-library/jest-dom": "^5.11.6",
+    
     "@testing-library/react": "^11.2.2",
     "@types/node": "^14.14.10",
     "@types/react": "^17.0.0",
@@ -43,10 +29,6 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "cypress": "^6.2.0",
-    "enzyme": "^3.11.0",
-    "enzyme-adapter-react-16": "^1.15.5",
-    "jest": "^26.6.3",
-    "jest-dom": "^4.0.0",
     "react-dom": "^17.0.1",
     "react-test-render": "^1.1.2",
     "react-test-renderer": "^17.0.1"
