@@ -1,7 +1,7 @@
 const { get } = require("http")
 
 describe('Visit the webpage', () => {
-    it('Visits the Kitchen Sink', () => {
+    it('Visits the localhost:3000 bossa-box-front', () => {
       cy.visit('http://localhost:3000/')
     })
   })
