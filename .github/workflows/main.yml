@@ -13,7 +13,7 @@ jobs:
       - name: Run End-to-end tests
         uses: cypress-io/github-action@v2
         with:
-          start: npm start
+          start: npm githubActions
           browser: chrome
           wait-on: 'http://localhost:3000'
           config: baseUrl=https://localhost:3000
