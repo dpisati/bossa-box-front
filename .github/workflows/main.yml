@@ -1,19 +1,36 @@
 name: End-to-end tests
 on:
   push:
-    branches: [ master ]
+    branches: 
+      - 'master'
 jobs:
-  cypress-run:
-    runs-on: ubuntu-latest
+  cypress-test:
+    name: Run on Chrome 83
+    runs-on: ubuntu-18.04
+    container: cypress/browsers:node12.18.0-chrome83-ff77
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - name: Checkout
-        uses: actions/checkout@v1
-      - name: Run End-to-end tests
-        uses: cypress-io/github-action@v2
-        with:
-          start: npm githubActions
-          browser: chrome
-          wait-on: 'http://localhost:3000'
-          config: baseUrl=https://localhost:3000
+      - uses: actions/checkout@v2
+      - name: Install cypress and verify
+        run:
+          npm ci
+          $(npm bin)/cypress verify
+      
+      - name: Run Cypress tests
+        run: npm run test:chrome
+        continue-on-error: false
+      
+
+
+
+
+
+      # - name: Checkout
+      #   uses: actions/checkout@v1
+      # - name: Run End-to-end tests
+      #   uses: cypress-io/github-action@v2
+      #   with:
+      #     start: npm githubActions
+      #     browser: chrome
+      #     wait-on: 'http://localhost:3000'
+      #     config: baseUrl=https://localhost:3000
