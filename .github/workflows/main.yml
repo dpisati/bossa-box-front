@@ -1,15 +1,19 @@
 name: End-to-end tests
-  on: [push]
-  jobs:
-    cypress-run:
-      runs-on: ubuntu-latest
-      steps:
-        - name: Checkout
-          uses: actions/checkout@v1
-        - name: Run blog test
-          uses: cypress-io/github-action@v2
-          with:
-            start: npm start
-            browser: chrome
-            wait-on: 'http://localhost:3000'
-            config: baseUrl=https://localhost:3000
+on:
+  push:
+    branches: [ master ]
+jobs:
+  cypress-run:
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: Run End-to-end tests
+        uses: cypress-io/github-action@v2
+        with:
+          start: npm start
+          browser: chrome
+          wait-on: 'http://localhost:3000'
+          config: baseUrl=https://localhost:3000
