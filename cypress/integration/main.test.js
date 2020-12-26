@@ -6,7 +6,7 @@ describe('Visit the webpage', () => {
     })
   })
 
-describe('Search for tool', () => {
+describe('Search tool', () => {
     it('should search for tool', () => {
         cy.intercept('/tools').as('getTools')
         cy.get('#search-input')
@@ -17,14 +17,18 @@ describe('Search for tool', () => {
             cy.get('.Card_card__K0CRX').should('have.length', 2)
         })
 
+        // cy.get('.react-switch-handle').click() 
+        // cy.wait('@getTools').then(() => {
+        //     cy.get('.Card_card__K0CRX').should('have.length', 0)
+        // })
+    })
+    it('should search for tool on tags only', () => {
+        cy.intercept('/tools').as('getTools')
         cy.get('.react-switch-handle').click() 
         cy.wait('@getTools').then(() => {
             cy.get('.Card_card__K0CRX').should('have.length', 0)
         })
     })
-})
-
-describe('Search for invalid tool', () => {
     it('should not find a tool', () => {
         cy.get('#search-input').clear()
         cy.intercept('/tools').as('getTools')
@@ -36,14 +40,12 @@ describe('Search for invalid tool', () => {
             cy.get('[alt="Not Found"]')
         })
     })
-})
-
-describe('Clean previous search', () => {
     it('should clean previous search', () => {
         cy.get('.react-switch-handle').click() 
         cy.get('#search-input').clear()
     })
 })
+
 
 describe('Change theme', () => {
     it('should toggle theme on first click', () => {
