@@ -8,6 +8,7 @@
 # Index
 
 - [About](#about)
+- [Demo](#demo)
 - [Functionalities](#functionalities)
 - [Technologies](#technologies)
 - [Preview Web](#preview-web)
@@ -25,6 +26,14 @@ The task is to build a front-end for the VUTTR (Very Useful Tools to Remember) a
 
 The front-end was build using Next.js to improve the SEO, and the api is a json-server that is host on [Heroku](https://dashboard.heroku.com/).
 
+
+<a id="demo"></a>
+
+## :trophy: Demo
+
+The front and is hosted on Vercel and the back-end on Heroku.
+
+https://bossa-box-front.vercel.app/
 
 <a id="functionalities"></a>
 
